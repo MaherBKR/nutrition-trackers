@@ -73,6 +73,8 @@ class NotificationService {
         _nextInstanceOfDay(d, hour, minute),
         _mealChannel,
         androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+        uiLocalNotificationDateInterpretation:
+            UILocalNotificationDateInterpretation.absoluteTime,
         matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
       );
     }
@@ -108,6 +110,8 @@ class NotificationService {
             ),
           ),
           androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+          uiLocalNotificationDateInterpretation:
+              UILocalNotificationDateInterpretation.absoluteTime,
         );
         i++;
       }
