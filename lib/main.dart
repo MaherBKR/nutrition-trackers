@@ -4,6 +4,7 @@ import 'screens/daily_log_screen.dart';
 import 'screens/ingredient_list_screen.dart';
 import 'screens/pantry_screen.dart';
 import 'screens/recipe_list_screen.dart';
+import 'screens/settings_screen.dart';
 import 'screens/shopping_screen.dart';
 import 'services/seed_service.dart';
 
@@ -44,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
     PantryScreen(),
     ShoppingScreen(),
     AnalyticsScreen(),
+    SettingsScreen(),
   ];
 
   @override
@@ -60,6 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
           NavigationDestination(icon: Icon(Icons.inventory_2), label: 'Pantry'),
           NavigationDestination(icon: Icon(Icons.shopping_cart), label: 'Shop'),
           NavigationDestination(icon: Icon(Icons.insights), label: 'Stats'),
+          NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
         ],
       ),
     );
