@@ -34,7 +34,7 @@ class MacroRing extends StatelessWidget {
                 minHeight: 10,
                 borderRadius: BorderRadius.circular(5),
                 color: color,
-                backgroundColor: color.withOpacity(0.2),
+                backgroundColor: color.withValues(alpha: 0.2),
               ),
             ),
             SizedBox(
@@ -67,13 +67,13 @@ class MacroRing extends StatelessWidget {
                       centerSpaceRadius: 55,
                       sectionsSpace: 2,
                       sections: [
-                        PieChartSectionValue(
+                        PieChartSectionData(
                           value: pct * 100,
                           color: Colors.teal,
                           showTitle: false,
                           radius: 18,
                         ),
-                        PieChartSectionValue(
+                        PieChartSectionData(
                           value: (1 - pct) * 100,
                           color: Colors.grey.shade300,
                           showTitle: false,
