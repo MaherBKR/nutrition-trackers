@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'screens/analytics_screen.dart';
 import 'screens/daily_log_screen.dart';
 import 'screens/ingredient_list_screen.dart';
+import 'screens/pantry_screen.dart';
 import 'screens/recipe_list_screen.dart';
+import 'screens/shopping_screen.dart';
 import 'services/seed_service.dart';
 
 Future<void> main() async {
@@ -39,6 +41,8 @@ class _HomeScreenState extends State<HomeScreen> {
     DailyLogScreen(),
     IngredientListScreen(),
     RecipeListScreen(),
+    PantryScreen(),
+    ShoppingScreen(),
     AnalyticsScreen(),
   ];
 
@@ -53,7 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
           NavigationDestination(icon: Icon(Icons.today), label: 'Today'),
           NavigationDestination(icon: Icon(Icons.eco), label: 'Foods'),
           NavigationDestination(icon: Icon(Icons.restaurant_menu), label: 'Recipes'),
-          NavigationDestination(icon: Icon(Icons.insights), label: 'Analytics'),
+          NavigationDestination(icon: Icon(Icons.inventory_2), label: 'Pantry'),
+          NavigationDestination(icon: Icon(Icons.shopping_cart), label: 'Shop'),
+          NavigationDestination(icon: Icon(Icons.insights), label: 'Stats'),
         ],
       ),
     );
