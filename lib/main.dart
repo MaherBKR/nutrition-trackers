@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'screens/analytics_screen.dart';
+import 'screens/daily_log_screen.dart';
 import 'screens/ingredient_list_screen.dart';
 import 'screens/recipe_list_screen.dart';
 import 'services/seed_service.dart';
@@ -33,18 +35,25 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _tab = 0;
 
+  static const _screens = [
+    DailyLogScreen(),
+    IngredientListScreen(),
+    RecipeListScreen(),
+    AnalyticsScreen(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _tab == 0
-          ? const IngredientListScreen()
-          : const RecipeListScreen(),
+      body: _screens[_tab],
       bottomNavigationBar: NavigationBar(
         selectedIndex: _tab,
         onDestinationSelected: (i) => setState(() => _tab = i),
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.eco), label: 'Ingredients'),
+          NavigationDestination(icon: Icon(Icons.today), label: 'Today'),
+          NavigationDestination(icon: Icon(Icons.eco), label: 'Foods'),
           NavigationDestination(icon: Icon(Icons.restaurant_menu), label: 'Recipes'),
+          NavigationDestination(icon: Icon(Icons.insights), label: 'Analytics'),
         ],
       ),
     );
