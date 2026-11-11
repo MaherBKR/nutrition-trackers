@@ -1,4 +1,3 @@
-import 'package:sqflite/sqflite.dart';
 import '../database/database.dart';
 
 class PantryService {
