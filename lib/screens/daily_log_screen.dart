@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../database/database.dart';
 import '../widgets/macro_ring.dart';
-import '../services/pantry_service.dart';
 
 class DailyLogScreen extends StatefulWidget {
   const DailyLogScreen({super.key});
