@@ -153,7 +153,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         'title': titleCtrl.text.trim(),
         'schedule_type': scheduleType,
         'time_or_interval': valueCtrl.text,
-        'days_active': days.toList()..sort().join(','),
+        'days_active': (days.toList()..sort()).join(','),
         'is_enabled': 1,
       });
       setState(_load);
