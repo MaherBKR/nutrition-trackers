@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../database/database.dart';
 import '../widgets/macro_ring.dart';
+import '../services/pantry_service.dart';
 
 class DailyLogScreen extends StatefulWidget {
   const DailyLogScreen({super.key});
@@ -211,13 +212,17 @@ class _DailyLogScreenState extends State<DailyLogScreen> {
             FilledButton(
               onPressed: () async {
                 if (chosen == null) return;
-                await db.insert('daily_logs', {
-                  'date': _date,
-                  'meal_slot': mealSlot,
-                  'source_type': sourceType,
-                  'source_id': chosen!['id'],
-                  'grams_consumed': double.tryParse(gramsController.text) ?? 0,
-                });
+final grams = double.tryParse(gramsController.text) ?? 0;
+await db.insert('daily_logs', {
+  'date': _date,
+  'meal_slot': mealSlot,
+  'source_type': sourceType,
+  'source_id': chosen!['id'],
+  'grams_consumed': grams,
+});
+if (sourceType == 'Ingredient') {
+  await PantryService.deductStock(chosen!['id'], grams);
+}
                 if (ctx.mounted) Navigator.pop(ctx);
                 _load();
               },
