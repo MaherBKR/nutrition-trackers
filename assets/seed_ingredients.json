@@ -1,1 +1,29 @@
-
+{
+  "ingredients": [
+    {
+      "name": "Chicken Breast",
+      "category": "Poultry & Meat",
+      "preparations": [
+        { "prep_method": "Raw", "cal_per_100g": 120, "p_per_100g": 23, "c_per_100g": 0, "f_per_100g": 2.5 },
+        { "prep_method": "Air-Fried", "cal_per_100g": 165, "p_per_100g": 31, "c_per_100g": 0, "f_per_100g": 3.6 },
+        { "prep_method": "Pan-Fried", "cal_per_100g": 195, "p_per_100g": 30, "c_per_100g": 0, "f_per_100g": 7.5 }
+      ],
+      "units": [
+        { "unit_name": "g", "gram_equivalent": 1 },
+        { "unit_name": "piece/fillet", "gram_equivalent": 150 },
+        { "unit_name": "strip", "gram_equivalent": 40 }
+      ]
+    },
+    {
+      "name": "Whey Protein Isolate",
+      "category": "Supplements",
+      "preparations": [
+        { "prep_method": "Raw", "cal_per_100g": 370, "p_per_100g": 90, "c_per_100g": 2, "f_per_100g": 1 }
+      ],
+      "units": [
+        { "unit_name": "g", "gram_equivalent": 1 },
+        { "unit_name": "protein scoop", "gram_equivalent": 30 }
+      ]
+    }
+  ]
+}
